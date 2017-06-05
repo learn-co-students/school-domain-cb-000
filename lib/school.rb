@@ -11,7 +11,7 @@ class School
        @roster[@grade] = []
        @roster[@grade] << student
     else
-      @roster[@grade] << student
+      @roster[grade] << student
     end
   end
 
@@ -20,6 +20,6 @@ class School
   end
 
   def sort
-    @roster.sort_by { |grade, name| name }
+    @roster
   end
 end
