@@ -16,6 +16,10 @@ class School
   end
 
   def grade(grade)
-    return @roster[@grade]
+    return @roster[grade]
+  end
+
+  def sort
+    @roster.sort_by { |grade, name| name }
   end
 end
