@@ -4,6 +4,7 @@ class School
     @new = new
     @roster = {}
   end
+
   def add_student(student, grade)
     if @roster[grade] == nil
        @grade = grade
@@ -12,5 +13,9 @@ class School
     else
       @roster[@grade] << student
     end
+  end
+
+  def grade(grade)
+    return @roster[@grade]
   end
 end
