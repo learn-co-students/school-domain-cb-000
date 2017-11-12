@@ -13,6 +13,19 @@ class School
     roster[grade] ||= [] # add multiple students to a grade & add students to different grades using ||=
     roster[grade] << student_name # ...then: push the new value into that array
   end
+
+
+=begin
+  roster = {
+     9 => [student_name, student_name],
+    10 => [student_name, student_name],
+    11 => [student_name, student_name]
+  }
+=end
+  # grade method should take in an argument of a class grade and return all of the students in that grade
+  def grade(class_grade)
+    roster[class_grade]
+  end
 end
 
 
