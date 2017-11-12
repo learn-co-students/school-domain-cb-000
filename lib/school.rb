@@ -26,7 +26,23 @@ class School
   def grade(class_grade)
     roster[class_grade]
   end
+
+  # sort the students in each grade alphabetically by name 
+  def sort
+    sorted_roster = {} # start with an empty hash
+
+    roster.each do |grade, students| # for each key (grade) / value (students array) pair in roster hash
+      sorted_roster[grade] = students.sort  # arrange the students alphabetically within their array
+    end
+
+    return sorted_roster # return hash: sorted_roster = { 9 => [student_9A, student_9B, student_9C],10 => [student_10A, student_10B] }
+  end
+
 end
+
+
+
+
 
 
 =begin
