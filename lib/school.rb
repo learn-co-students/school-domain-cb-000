@@ -6,15 +6,20 @@ class School
     @roster = {}
   end
 
-  def add_student(student, grade)
-    @roster.has_key?(grade) ? @roster[grade] << student : @roster[grade] = [student]
+  def add_student(student_name, grade)
+    roster[grade] ||= []
+    roster[grade] << student_name
   end
 
-  def grade(grades)
-    @roster[grades]
+  def grade(student_grade)
+    roster[student_grade]
   end
 
   def sort
-    @roster.sort_by(&:first).map { |k, v| [k, v.sort]}.to_h
+    sorted = {}
+    roster.each do |grade, students|
+      sorted[grade] = students.sort
+    end
+    sorted
   end
 end
