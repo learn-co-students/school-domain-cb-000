@@ -11,9 +11,6 @@ class School
     @roster
   end
 
-  # def add_student(student, grade)
-  #   @roster[grade] ||= [] << student
-  # end
   def add_student(student, grade)
     if @roster[grade] == nil
       @roster[grade] = [] << student
