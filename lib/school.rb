@@ -7,7 +7,8 @@ class School
   end
   
   def add_student(name, grade)
-    @roster[grade] = [] unless @roster.keys.include?(grade)
+    # long way: @roster[grade] = [] unless @roster.keys.include?(grade)
+    @roster[grade] ||= []
     @roster[grade] << name
   end
   
@@ -18,8 +19,7 @@ class School
   def sort
     sorted_roster = {}
     @roster.each do |grade, students|
-      sorted_roster[grade] = []
-      sorted_roster[grade] << students.sort
+      sorted_roster[grade] = students.sort
     end
     sorted_roster
   end
