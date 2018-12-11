@@ -8,25 +8,24 @@ class School
   end
 
   def add_student(student_name, grade)
-    if @roster[grade]
-      @roster[grade] << student_name
-    else
+    if !@roster[grade]
       @roster[grade] = []
-      @roster[grade] << student_name
     end
+      @roster[grade] << student_name
   end
 
   def grade(num)
     return @roster[num]
   end
+
   def sort
     temp = @roster
     temp.collect do |grade, students|
-      students = students.sort
-      temp[grade] = students
+      temp[grade] = students.sort
     end
     return temp
   end
+
 end
 
 PHS = School.new("Princeton")
