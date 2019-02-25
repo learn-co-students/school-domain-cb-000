@@ -1,38 +1,26 @@
 class School
+  attr_accessor :name, :roster
+
   def initialize(name)
-    @name = name 
- 
+    @name = name
     @roster = {}
-  end   
-  
-  def add_student(student_name, grade)
-    if @roster.has_key?(grade)
-        @roster[grade] << student_name
-    else
-        @roster[grade] = []
-        @roster[grade] << student_name
-    end 
-  end 
-  
-  def grade(grade)
-    if @roster.has_key?(grade)
-        @roster[grade]
-    end 
-  end 
-  
-  def sort 
-    
-    sorted = {}
-    
-    @roster.each { |grade, students|
-        puts("Sorting grade: #{grade}");
-      sorted[grade] = students.sort }
-      puts("Result: #{sorted}")
-      sorted
   end
-  
-  def roster
-    return @roster
-  end 
-  
-end 
+
+  def add_student(student_name, grade)
+    roster[grade] ||= []
+    roster[grade] << student_name
+  end
+
+  def grade(student_grade)
+    roster[student_grade]
+  end
+
+  # this method should arrange the students in each grade by alphabetical order
+  def sort
+    sorted = {}
+    roster.each do |grade, students|
+      sorted[grade] = students.sort
+    end
+    sorted
+  end
+end
