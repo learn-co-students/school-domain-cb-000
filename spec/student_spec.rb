@@ -59,3 +59,7 @@ describe 'School' do
     end
   end
 end
+
+
+
+roster = {7 => ["Jack Bauer", "Blake Johnson"], 9 => ["Homer Simpson", "Bart Simpson"], 10 => ["Avi Flombaum", "Jeff Baird"]}
